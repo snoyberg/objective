@@ -1,5 +1,5 @@
 name:                objective
-version:             0.6.5
+version:             0.6.5.1
 synopsis:            Extensible objects
 description:         Stateful effect transducer
 homepage:            https://github.com/fumieval/objective
@@ -34,7 +34,7 @@ library
   build-depends:       base >=4.5 && <5
     , comonad
     , elevator >= 0.2 && <0.3
-    , extensible
+    , extensible >= 0.2.9 && <0.3
     , containers
     , minioperational >= 0.4 && <0.5
     , profunctors >= 4.0 && <5

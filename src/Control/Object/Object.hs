@@ -114,8 +114,8 @@ sharing :: Monad m => (forall a. f a -> StateT s m a) -> s -> Object (Union '[St
 sharing m = go where
   go s = Object $ \k -> liftM (fmap go) $ caseOf (getUnion k)
     $ (\n cont -> return $ first cont $ runState n s)
-    <$?~ (\e cont -> first cont `liftM` runStateT (m e) s)
-    <$?~ Nil
+    <?!~ (\e cont -> first cont `liftM` runStateT (m e) s)
+    <?!~ Nil
 {-# INLINE sharing #-}
 
 (@!) :: Monad m => Object e m -> ReifiedProgram e a -> m (a, Object e m)

@@ -1,3 +1,8 @@
+0.6.5.1
+----
+* Added `MonadTrans` instance for `Mortal`.
+* Added `newSettle`.
+
 0.6.5
 ----
 * Supported `elevator >= 0.2`.
